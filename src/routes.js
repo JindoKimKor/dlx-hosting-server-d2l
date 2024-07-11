@@ -24,6 +24,15 @@ router.get("/dlx/:param", async (req, res) => {
     httpOnly: false,
     sameSite: "None",
   });
+
+  // Create 'names_and_roles' cookie
+  // This cookie will include all members information who are enrolled in a course
+  const response = await lti.NamesAndRoles.getMembers(res.locals.token) // Gets context members
+  res.cookie("names_and_roles", response, {
+    secure: true,
+    httpOnly: false,
+    sameSite: "None",
+  });
   const content = await getContentByParam(param);
 
   // When content does not exist
@@ -31,10 +40,6 @@ router.get("/dlx/:param", async (req, res) => {
 
   // For testing
   if (param.includes("testing")) return res.send("success");
-
-  // For 'Powerline' which is web-hosted project
-  if (param.includes("powerline"))
-    return res.redirect("https://webdlx.vconestoga.com/powerline/");
 
   // For local dlxs
   return sendFileResponse(req, res, `../../public/${content.param}/index.html`);
