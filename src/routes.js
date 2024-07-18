@@ -6,7 +6,8 @@ const { sendFileResponse } = require("./utils/routes-helpers.js");
 const {
   getContentsByCourse,
   getContentByParam,
-  addDummyData,
+  getFolderNames,
+  updateMongoDB,
 } = require("./utils/mongodb-util.js");
 const Model = require("./models/model.js");
 mongoose.connect(process.env.DB_URL);
@@ -221,10 +222,11 @@ router.get("/deeplink", async (req, res) => {
 router.get("/deeplink/contents", async (req, res) => {
   debugger;
   const course = res.locals.token.platformContext.context.title;
-  // For testing, add dummy data and then fetch contents by course
-  const contents = await addDummyData().then(() => getContentsByCourse(course));
-  // // Fetch existing contets by course
-  // const contents = await getContentsByCourse(course);
+
+  // Update MongoDB before send the 'content list' to LMS
+  // Get content list from the 'course' table in MongoDB
+  const contents = await updateMongoDB(course).then(() => getContentsByCourse(course));
+  
   return res.send(contents);
 });
 
