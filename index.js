@@ -86,7 +86,6 @@ lti.onConnect(async (token, req, res) => {
     httpOnly: false,
     sameSite: "None",
   });
- 
   return res.sendFile(path.join(__dirname, "./public/dlx-client/index.html"));
 });
 
