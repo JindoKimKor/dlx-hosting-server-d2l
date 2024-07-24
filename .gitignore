@@ -1,3 +1,10 @@
 node_modules
 logs
 .env
+.env.*
+index.js.save*
+ecosystem.config.js
+src/routes.js.*
+/log
+/public
+/undefined

@@ -77,13 +77,12 @@ const logError = (req, res, err) => {
   );
   return res.send(err.message);
 };
-
-// // Function that logs successful requests with the request path and response status.
-// function logSuccess(req, res) {
-//   res.status(200);
-//   logger.info(
-//     `Request successful: { path: ${req.path}, status: ${res.statusCode} }`
-//   );
-// }
+// Function that logs successful requests with the request path and response status.
+function logSuccess(req, res) {
+   res.status(200);
+   logger.info(
+     `Request successful: { path: ${req.path}, status: ${res.statusCode} }`
+   );
+ }
 
 module.exports = { logger, logError };

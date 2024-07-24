@@ -115,6 +115,31 @@ const dummyContents = [
     title: "Powerline",
     param: "powerline",
   },
+  {
+    type: "ltiResourceLink",
+    title: "CORE Sandbox V2",
+    param: "CORE-Sandbox-V2",
+  },
+  {
+    type: "ltiResourceLink",
+    title: "Public Health Inspection",
+    param: "Public-Health-Inspection",
+  },
+  {
+    type: "ltiResourceLink",
+    title: "Trades Electrical",
+    param: "Trades-Electrical",
+  },
+  {
+    type: "ltiResourceLink",
+    title: "Paramedic Ambulance",
+    param: "Paramedic-Ambulance",
+  },
+  {
+    type: "ltiResourceLink",
+    title: "LTI Package Test",
+    param: "LTI-Package-Test",
+  },
 ];
 
 const dummyCourses = [
@@ -128,6 +153,7 @@ const dummyCourses = [
       "MP Circuits Lab 1",
       "MP Circuits Lab 2",
       "Powerline",
+      "Paramedic Ambulance",
     ],
   },
   {
@@ -156,6 +182,22 @@ const dummyCourses = [
   {
     name: "1234-Test",
     dlx: [],
+  },
+  {
+    name: "DevOps Test",
+    dlx: [
+      "Roll-a-ball",
+      "React Multiplayer App",
+      "launchtesting",
+      "MP Circuits Lab 1",
+      "MP Circuits Lab 2",
+      "Powerline",
+      "CORE Sandbox V2",
+      "Public Health Inspection",
+      "Trades Electrical",
+      "Paramedic Ambulance",
+      "LTI Package Test"
+    ],
   },
 ];
 

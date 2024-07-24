@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 const path = require("path");
 const routes = require("./src/routes");
@@ -36,7 +37,12 @@ lti.setup(
         `${process.env.URL}/dlx/mpcl2`,
         `${process.env.URL}/dlx/launchtesting`,
         `${process.env.URL}/dlx/reactmultiplayerapp`,
-        `${process.env.URL}/dlx/powerline`,
+        `${process.env.URL}/dlx/Powerline`,
+        `${process.env.URL}/dlx/CORE-Sandbox-V2`,
+        `${process.env.URL}/dlx/Public-Health-Inspection`,
+        `${process.env.URL}/dlx/Trades-Electrical`,
+        `${process.env.URL}/dlx/Paramedic-Ambulance`,
+        `${process.env.URL}/dlx/LTI-Package-Test`,
       ],
       autoActivate: true,
     },
@@ -80,12 +86,14 @@ lti.onConnect(async (token, req, res) => {
     httpOnly: false,
     sameSite: "None",
   });
+ 
   return res.sendFile(path.join(__dirname, "./public/dlx-client/index.html"));
 });
 
 // When receiving deep linking request redirects to deep screen
 lti.onDeepLinking(async (token, req, res) => {
   debugger;
+  //fs.writeFile('~/DLX-Server/devopsdlxserver/OnDeepLink.txt', 'We in');
   return lti.redirect(res, "/deeplink", { newResource: true });
 });
 
