@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r dotenv/config",
-    "start": "set DEBUG=provider* & nodemon index.js"
+    "start": "export DEBUG=provider* & nodemon index.js"
   },
   "keywords": [
     "lti",
