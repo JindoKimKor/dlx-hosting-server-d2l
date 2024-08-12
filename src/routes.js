@@ -202,6 +202,11 @@ router.post("/grade/deletelineitem", async (req, res) => {
   }
 });
 
+//Get current user
+router.get("/currentuser", async(req, res) => {
+  res.send(res.locals.token.user);
+});
+
 // Names and Roles route
 router.get("/members", async (req, res) => {
   try {
