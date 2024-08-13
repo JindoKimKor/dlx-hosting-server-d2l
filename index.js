@@ -44,6 +44,7 @@ lti.setup(
         `${process.env.URL}/dlx/Paramedic-Ambulance`,
         `${process.env.URL}/dlx/LTI-Package-Test`,
         `${process.env.URL}/dlx/EcoQuorum`,
+        `${process.env.URL}/dlx/Photogrammetry`
       ],
       autoActivate: true,
     },
