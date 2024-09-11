@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r dotenv/config",
-    "start": "set DEBUG=provider* && nodemon index.js"
+    "start": "export DEBUG=provider* && nodemon index.js"
   },
   "keywords": [
     "lti",
@@ -23,7 +23,8 @@
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
     "winston": "^3.11.0",
-    "winston-daily-rotate-file": "^4.7.1"
+    "winston-daily-rotate-file": "^4.7.1",
+    "mongoose": "^7.0.1"
   },
   "devDependencies": {
     "mocha": "^10.3.0"

@@ -14,7 +14,7 @@ mongoose.connect(process.env.DB_URL);
 const database = mongoose.connection;
 
 // Requiring Ltijs
-const lti = require("ltijs").Provider;
+const lti = require(path.resolve('./ltijs/index.js'));;
 
 // Dynamic routing for dlx
 router.get("/dlx/:param", async (req, res) => {
