@@ -1,9 +1,8 @@
-
 require("dotenv").config();
 const path = require("path");
 const routes = require("./src/routes");
 const { logger } = require("./src/logger");
-const lti = require("ltijs").Provider;
+const lti = require("./ltijs").Provider;
 const morgan = require("morgan");
 
 // Setup morgan for logging HTTP requests
